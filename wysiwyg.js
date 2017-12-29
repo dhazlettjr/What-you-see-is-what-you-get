@@ -66,10 +66,13 @@ for (let i = 0; i < famousPeeps.length; i++) {
   let header = document.createElement("header");
   let section = document.createElement("section");
   let footer = document.createElement("footer");
-  let nameHeader = document.createElement("nameHeader");
-  let titleHeader = document.createElement("titleHeader");
+  let nameHeader = document.createElement("h2");
+  let titleHeader = document.createElement("h3");
   let name = document.createTextNode(`${famousPeeps[i].name}`);
   let title = document.createTextNode(`${famousPeeps[i].title}`);
+  let bioText = document.createTextNode(`${famousPeeps[i].bio}`);
+  let bioEntry = document.createElement("p");
+
   // let article = document.getElementsByClassName("people-container");
   // let inputText = document.getElementsByClassName("input-text");
 
@@ -78,13 +81,17 @@ for (let i = 0; i < famousPeeps.length; i++) {
   console.log(`person-${counter}`);
   famousCard.setAttribute("class", "people-container");
   peopleContainer.appendChild(famousCard);
-  famousCard.appendChild(section);
-  famousCard.appendChild(footer);
+  peopleContainer.appendChild(section);
+  peopleContainer.appendChild(footer);
   famousCard.appendChild(header);
   nameHeader.appendChild(name);
   titleHeader.appendChild(title);
   header.appendChild(nameHeader);
   header.appendChild(titleHeader);
+  famousCard.appendChild(bioEntry);
+  bioEntry.appendChild(bioText);
+
+  
 
   section.innerHTML = `<img src="${famousPeeps[i].image}">`;
 }
