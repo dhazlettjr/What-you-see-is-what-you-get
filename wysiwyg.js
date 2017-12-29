@@ -61,6 +61,10 @@ let famousPeeps = [
 let counter = 0;
 let peopleContainer = document.getElementById("people-container");
 
+//create DOM elements for each object.
+// I will creat elements and text nodes, then append to the propper tags
+// the text nodes will bring in the object information.
+
 for (let i = 0; i < famousPeeps.length; i++) {
   let famousCard = document.createElement("article");
   let header = document.createElement("header");
@@ -80,6 +84,8 @@ for (let i = 0; i < famousPeeps.length; i++) {
 
   section.innerHTML = `<img src="${famousPeeps[i].image}">`;
 
+//append the cards to the container and the data to the cards.
+
   famousCard.setAttribute("id", `person-${counter}`);
   console.log(`person-${counter}`);
   famousCard.setAttribute("class", "people-container");
@@ -95,13 +101,21 @@ for (let i = 0; i < famousPeeps.length; i++) {
   bioEntry.appendChild(bioText);
   footer.appendChild(footerText);
   famousCard.appendChild(footer);
-}
+
+  
+
 
 
 let article = document.getElementsByClassName("people-container");
 let inputField = document.getElementById("input-field");
 let card;
 
+//create an EL to change what is in the BIO section
+inputField.addEventListener("input", function(){
+  bioEntry.innerHTML = inputField.value;
+});
+
+//create another EL to switch to input field when any element is clicked
 for ( let i = 0; i<article.length; i++) {
   article[i].addEventListener("click", function (){
     inputField.value = "";
@@ -115,7 +129,7 @@ for ( let i = 0; i<article.length; i++) {
   })
 }
 
-
+// create EL to clear what is in the input field when enter is clicked
 inputField.addEventListener("keypress", function(event) {
   let key = event.which || event.keycode;
   if (key ===13) {
@@ -124,3 +138,4 @@ inputField.addEventListener("keypress", function(event) {
       };
   }
 );
+}
