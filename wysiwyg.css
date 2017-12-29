@@ -1,0 +1,12 @@
+.dotted {
+    border: 3px dotted black;
+}
+ 
+ 
+ h2, p{
+    background:lightblue;
+}
+
+h3, footer {
+    background:lightyellow;
+}
