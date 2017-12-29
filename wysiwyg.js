@@ -110,7 +110,7 @@ let article = document.getElementsByClassName("people-container");
 let inputField = document.getElementById("input-field");
 let card;
 
-//create an EL to change what is in the BIO section
+//create an EL to change what is in the BIO section. cannot figure out how to bind this to each individual card.
 inputField.addEventListener("input", function(){
   bioEntry.innerHTML = inputField.value;
 });
