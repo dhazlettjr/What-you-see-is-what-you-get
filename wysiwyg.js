@@ -95,24 +95,33 @@ for (let i = 0; i < famousPeeps.length; i++) {
   bioEntry.appendChild(bioText);
   footer.appendChild(footerText);
   famousCard.appendChild(footer);
+}
 
+
+let article = document.getElementsByClassName("people-container");
+let inputField = document.getElementById("input-field");
+let card;
+
+for ( let i = 0; i<article.length; i++) {
+  article[i].addEventListener("click", function (){
+    inputField.value = "";
+    event.target.style.border ="4px dotted black";
+    // nameHeader.style.border = "thick dotted #0000FF";
+    // titleHeader.style.border = "thick dotted #0000FF";
+    // bioEntry.style.border = "thick dotted #0000FF";
+    // footer.style.border = "thick dotted #0000FF";
+    inputField.focus();
+    card = event.currentTarget;
+  })
 }
 
 
 
-// var counter1 = 0;
-// var output = document.getElementById("output");
-// for (; counter < 5; counter++) {
-//   // Give each person element a unique identifier
-//   output.innerHTML += `<div class="people-container" id="person--${counter}"></div>`;
-// }
-
-// // Now containerEl will have elements in it
-// var containerEL = document.getElementsByClassName("people-container");
-
-// // Event listeners are created
-// for (var i = 0; i < containerEl.length; i++) {
-//   containerEl[i].addEventListener("click", function (event) {
-//     // Logic to execute when the element is clicked
-//   });
-// };
+inputField.addEventListener("keypress", (e)=> {
+  const key = e.which || e.keyCode;
+  if (key === 13){
+      inputField.value = "";
+      console.log("keypress running");
+      };
+  }
+);
