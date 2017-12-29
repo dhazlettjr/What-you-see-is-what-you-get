@@ -58,17 +58,33 @@ let famousPeeps = [
    }
 ]
 
-let container = document.getElementById("container");
-let person = document.getElementsByTagName("header")[0];
+let counter = 0;
+let peopleContainer = document.getElementById("people-container");
 
-function personSelect(item){
-   container.style.border = " thick solid #0000FF";
-    
+for (let i = 0; i < famousPeeps.length; i++) {
+  let famousCard = document.createElement("article");
+  let header = document.createElement("header");
+  let section = document.createElement("section");
+  let footer = document.createElement("footer");
+  let nameHeader = document.createElement("nameHeader");
+  let titleHeader = document.createElement("titleHeader");
+  let name = document.createTextNode(`${famousPeeps[i].name}`);
+  let title = document.createTextNode(`${famousPeeps[i].title}`);
+  // let article = document.getElementsByClassName("people-container");
+  // let inputText = document.getElementsByClassName("input-text");
+
+
+  famousCard.setAttribute("id", `person-${counter}`);
+  console.log(`person-${counter}`);
+  famousCard.setAttribute("class", "people-container");
+  peopleContainer.appendChild(famousCard);
+  famousCard.appendChild(section);
+  famousCard.appendChild(footer);
+  famousCard.appendChild(header);
+  nameHeader.appendChild(name);
+  titleHeader.appendChild(title);
+  header.appendChild(nameHeader);
+  header.appendChild(titleHeader);
+
+  section.innerHTML = `<img src="${famousPeeps[i].image}">`;
 }
-
-person.addEventListener("click", function(){
-    let clickPerson = event.target;
-    
-    personSelect(clickPerson);
-
-});
