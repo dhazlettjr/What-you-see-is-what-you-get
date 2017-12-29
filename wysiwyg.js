@@ -116,12 +116,11 @@ for ( let i = 0; i<article.length; i++) {
 }
 
 
-
-inputField.addEventListener("keypress", (e)=> {
-  const key = e.which || e.keyCode;
-  if (key === 13){
+inputField.addEventListener("keypress", function(event) {
+  let key = event.which || event.keycode;
+  if (key ===13) {
       inputField.value = "";
-      console.log("keypress running");
+      console.log("it works");
       };
   }
 );
