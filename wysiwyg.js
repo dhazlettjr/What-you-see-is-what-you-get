@@ -72,10 +72,13 @@ for (let i = 0; i < famousPeeps.length; i++) {
   let title = document.createTextNode(`${famousPeeps[i].title}`);
   let bioText = document.createTextNode(`${famousPeeps[i].bio}`);
   let bioEntry = document.createElement("p");
+  let footerEntry = document.createElement("p");
+  let footerText = document.createTextNode(`${famousPeeps[i].lifespan.birth} - ${famousPeeps[i].lifespan.death}`);
 
   // let article = document.getElementsByClassName("people-container");
   // let inputText = document.getElementsByClassName("input-text");
 
+  section.innerHTML = `<img src="${famousPeeps[i].image}">`;
 
   famousCard.setAttribute("id", `person-${counter}`);
   console.log(`person-${counter}`);
@@ -90,8 +93,26 @@ for (let i = 0; i < famousPeeps.length; i++) {
   header.appendChild(titleHeader);
   famousCard.appendChild(bioEntry);
   bioEntry.appendChild(bioText);
+  footer.appendChild(footerText);
+  famousCard.appendChild(footer);
 
-  
-
-  section.innerHTML = `<img src="${famousPeeps[i].image}">`;
 }
+
+
+
+// var counter1 = 0;
+// var output = document.getElementById("output");
+// for (; counter < 5; counter++) {
+//   // Give each person element a unique identifier
+//   output.innerHTML += `<div class="people-container" id="person--${counter}"></div>`;
+// }
+
+// // Now containerEl will have elements in it
+// var containerEL = document.getElementsByClassName("people-container");
+
+// // Event listeners are created
+// for (var i = 0; i < containerEl.length; i++) {
+//   containerEl[i].addEventListener("click", function (event) {
+//     // Logic to execute when the element is clicked
+//   });
+// };
