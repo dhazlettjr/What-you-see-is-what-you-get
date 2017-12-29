@@ -1,19 +1,7 @@
-#person1 {
-    background: lightblue;
+ h2, p{
+    background:lightblue;
 }
 
-#person2 {
-    background: lightyellow;
-}
-
-#person3 {
-    background: lightblue;
-}
-
-#person4 {
-    background: lightyellow;
-}
-
-#person5 {
-    background: lightblue;
+h3 {
+    background:lightyellow;
 }
